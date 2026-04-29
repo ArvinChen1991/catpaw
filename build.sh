@@ -20,6 +20,8 @@ _package() {
     mkdir -p "${RELEASE_DIR}"
     cp ${APP_NAME} "${RELEASE_DIR}/"
     cp -r conf.d   "${RELEASE_DIR}/"
+    mkdir -p "${RELEASE_DIR}/state.d"
+    touch "${RELEASE_DIR}/state.d/.gitkeep"
 
     tar czf "${RELEASE_DIR}.tar.gz" "${RELEASE_DIR}"
     rm -rf "${RELEASE_DIR}" ${APP_NAME}
